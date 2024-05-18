@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Avaliação de Desempenho na Empresa</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Avaliação de Desempenho na Empresa</h1>
+    <div class="form-group">
+        <label for="nome">Digite o nome do funcionário:</label>
+        <input type="text" class="form-control" id="nome">
+    </div>
+    <button class="btn btn-primary" onclick="calcularPorcentagens()">Calcular</button>
+    <div class="mt-3">
+        <h3>Porcentagem de Avaliação:</h3>
+        <p id="resultado"></p>
+    </div>
+</div>
+<script>
+    function calcularPorcentagens() {
+        const nome = document.getElementById('nome').value;
+        if (nome.trim() === '') {
+            alert('Por favor, digite o nome do funcionário.');
+        } else {
+            const porcentagemAprovacao = Math.floor(Math.random() * 100) + 1;
+            const porcentagemReprovacao = 100 - porcentagemAprovacao;
+            document.getElementById('resultado').innerHTML = `O funcionário ${nome} obteve ${porcentagemAprovacao}% de aprovação e ${porcentagemReprovacao}% de reprovação.`;
+        }
+    }
+</script>
+</body>
+</html>
